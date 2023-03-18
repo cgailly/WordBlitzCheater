@@ -16,13 +16,13 @@ What a bunch o requests! After sorting them, three are quite intersting:
 * *v2/game/start* starts a round
 * *v2/game/play* closes a round
 
-Analysing more deeper the *v2/game/list*, I discovered the request is really juicy !
+#### Analysing more deeper the *v2/game/list*, I discovered the request is really juicy !
 * First, when a new game is created, the game contains already the three rounds, meaning we have all grids in advanced.<br/><img width="698" alt="image" src="https://user-images.githubusercontent.com/20342260/226114816-89e2ae22-bf2e-44b3-a68e-36e755b5d068.png">
 * Moreover, we have all available words in advance !<br/><img width="538" alt="image" src="https://user-images.githubusercontent.com/20342260/226114929-19bd1cb6-cd7c-4fb9-b259-d0a0a621c9c3.png">
 
-The *v2/game/start* request, just starts a game with the the round id and a timer.
+#### The *v2/game/start* request, just starts a game with the the round id and a timer.
 
-And finally the request *v2/game/play* sends all path found in json form with an url encoding:<br/>
+#### And finally the request *v2/game/play* sends all path found in json form with an url encoding:<br/>
 <img width="914" alt="image" src="https://user-images.githubusercontent.com/20342260/226115088-fa3d1f9e-3e64-4ab5-ad41-b4436c033454.png"><br/>
 <img width="1011" alt="image" src="https://user-images.githubusercontent.com/20342260/226115150-7e2cc3bb-75e1-4ad6-aa45-a6b72568817d.png">
 
