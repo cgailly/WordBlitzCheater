@@ -46,6 +46,11 @@ Cheating is bad... Seriously do not be naive, there are some cheaters, and now y
 
 
 ## Make the program working
+To install:
     $ pip install -r requirements.txt
+    
+You need to retrieve the signature, for exmple using burp and paste-it in the config.json file.
+    $ python3 main
+    
 
 
