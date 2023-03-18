@@ -41,5 +41,11 @@ Then I improved the program to make it computing what are the best words !<br/>
 And finally, I complete the program to make it playing automatically, up to you to decide how many words you wan to be found!
 
 
+## Conclusion
+Cheating is bad... Seriously do not be naive, there are some cheaters, and now you know how it works.
+
+
+## Make the program working
+    $ pip install -r requirements.txt
 
 
