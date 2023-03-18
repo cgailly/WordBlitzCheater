@@ -31,7 +31,7 @@ What a bunch o requests! After sorting them, three are quite intersting:
 
 ## Exploiting the requests
 Before exploiting the program, we can get the signature parameter provided as url parameter for each request.<br/>
-<img width="907" alt="image" src="https://user-images.githubusercontent.com/20342260/226115450-df9ce31f-297b-4b4f-ab2a-f5654fd545de.png">
+<img width="907" alt="image" src="https://user-images.githubusercontent.com/20342260/226115450-df9ce31f-297b-4b4f-ab2a-f5654fd545de.png"><br/>
 This parameters authenticates our user on the server. If we reuse this parameter, we can run the requests on any device, it means we do not need burp anymore!</br>
 As I have already the grid, and all words I wrote a first script to display the grid for the current round and return all words.
 Then I improved the program to make it finding the best words !<br/>
