@@ -1,6 +1,6 @@
 # WordBlitzCheater
 ## Intro
-Do you know this game ?, It's a battle of three rounds of 1 mn where you need to find the maximum of words. It's really a good game, and with my son we love playing this game. One day, my son asked me, hey dad, can you hack the game ? At least I can try...
+Do you know the [WordBlitz Game](https://wordblitz.com/) ?, It's a battle of three rounds of 1 mn each where you need to find the maximum of words. It's really a good game, and with my son we love playing it. One day, my son asked me, hey dad, can you hack the game ? At least I can try...
 
 ## Methodology
 What I have in mind, it to intercept the request containing the grid, compute the bests words and returns theses words to the server.<br/>
@@ -48,7 +48,7 @@ And finally, I complete the program to make it playing automatically, up to you 
 
 
 ## Conclusion
-Cheating is bad... Seriously do not be naive, and I am not the only one, but now you know how it works.
+Cheating is bad... :)  Ironically, testing the app, I loose against another cheater, but now you know how it works.
 
 
 ## Make the program working
