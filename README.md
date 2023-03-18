@@ -52,10 +52,12 @@ Cheating is bad... Seriously do not be naive, and I am not the only one, but now
 
 
 ## Make the program working
-To install:
+Install:
+
     $ pip3.10 install -r requirements.txt
     
 You need to retrieve the signature, for exmple using burp and paste-it in the config.json file.
+
     $ python3.10 main
     
 
