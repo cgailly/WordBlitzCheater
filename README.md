@@ -39,6 +39,12 @@ Then I improved the program to make it finding the best words !<br/>
 
 
 And finally, I complete the program to make it playing automatically, up to you to decide how many words you wan to be found!
+<br/>
+<img width="619" alt="image" src="https://user-images.githubusercontent.com/20342260/226130307-80e2a0ff-0211-411b-b805-b56a4f3bb04e.png">
+<br/>
+<img width="375" alt="image" src="https://user-images.githubusercontent.com/20342260/226130422-479bdd6b-ca06-4c56-a37e-ef3fbb619606.png">
+<br/> Enjoy ;)
+
 
 
 ## Conclusion
