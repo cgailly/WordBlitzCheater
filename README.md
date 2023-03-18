@@ -21,11 +21,24 @@ What a bunch o requests! After sorting them, three are quite intersting:
 * Moreover, we have all available words in advance !<br/><img width="538" alt="image" src="https://user-images.githubusercontent.com/20342260/226114929-19bd1cb6-cd7c-4fb9-b259-d0a0a621c9c3.png">
 
 #### The *v2/game/start* request, just starts a game with the the round id and a timer.
+<img width="906" alt="image" src="https://user-images.githubusercontent.com/20342260/226115296-35291aed-c990-4607-b936-4ee38432ad37.png">
+
 
 #### And finally the request *v2/game/play* sends all path found in json form with an url encoding:<br/>
 <img width="914" alt="image" src="https://user-images.githubusercontent.com/20342260/226115088-fa3d1f9e-3e64-4ab5-ad41-b4436c033454.png"><br/>
 <img width="1011" alt="image" src="https://user-images.githubusercontent.com/20342260/226115150-7e2cc3bb-75e1-4ad6-aa45-a6b72568817d.png">
 
+
+## Exploiting the requests
+Before exploiting the program, we can get the signature parameter provided as url parameter for each request.<br/>
+<img width="907" alt="image" src="https://user-images.githubusercontent.com/20342260/226115450-df9ce31f-297b-4b4f-ab2a-f5654fd545de.png">
+This parameters authenticates our user on the server. If we reuse this parameter, we can run the requests on any device, it means we do not need burp anymore!</br>
+As I have already the grid, and all words I wrote a first script to display the grid for the current round and return all words.
+Then I improved the program to make it computing what are the best words !
+<img width="562" alt="image" src="https://user-images.githubusercontent.com/20342260/226115836-00a5751d-ddfb-4762-9fab-f7f80e988b55.png">
+
+
+And finally, I complete the program to make it playing automatically, up to you to decide how many words you wan to be found!
 
 
 
