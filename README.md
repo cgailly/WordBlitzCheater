@@ -1,19 +1,24 @@
 # WordBlitzCheater
 ## Intro
-Do you know the [WordBlitz Game](https://wordblitz.com/) ?, It's a battle of three rounds of 1 mn each where you need to find the maximum of words. It's really a good game, and with my son we love playing it. One day, my son asked me, hey dad, can you hack the game ? At least I can try...
+Do you know the [WordBlitz Game](https://wordblitz.com/) ?, It is a free game, and it's a battle of three rounds of 1 mn each where you need to find the maximum of words. It's really a good game, and with my son we love playing it. One day, my son asked me, if I can you hack the game ? At least I can try...
 
-## War Plan
-Starting from the supposition the application relies on web services, the idea is to intercept the requests sent by the aplication. If we can programatically, get the the grid , find the bests words and returns theses words to the server then we are done.<br/>. So, is the plan step by step:
+## The Plan
+Starting from the supposition the application relies on web services, my idea is to intercept the requests sent by the aplication. Then, If we can programatically, get the grid content, find the bests words and send theses words to the server then we are done.<br/>. So, is the plan step by step:
 * Intercept Requests
-* Analyse request, get the grid, find words, send the words to the server.
+* Analyse the request, get the grid, find words, send the words to the server.
 * Write a robot to play automatically.
 
 ## Intercept
-The game runs on mobile phone, but obviously we want to intercept the requests on a laptop. Basically we wan to lead a (Man in the middle attack)[https://en.wikipedia.org/wiki/Man-in-the-middle_attack].<br>
-For this, we can use the [Burp tool](https://portswigger.net/burp).  and configure it as described [here:](https://portswigger.net/burp/documentation/desktop/mobile/config-ios-device). Basically, we run burp on the laptop as proxy, the tool will intercept the request. On the mobile, we configured the proxy with the laptop IP address and the listening burp port. To make it work, we have a last thing to do. The mobile phone will detect the man of middle attack, because we intercepting the request, burp uses his own certificate to sign the requests, and the burp certificate is not valid for the mobile phone. So we need to trust the burp certificate
+The game runs on mobile phone, ans what we want is to get the requests on a laptop. In other words, we want to lead a (Man in the middle attack)[https://en.wikipedia.org/wiki/Man-in-the-middle_attack].<br>
+The best tool for this is [Burp tool](https://portswigger.net/burp).  The most important difficulty with MoM attack is to bypass the certificate protection. Indeed, when the proxy intercepts a request, it uses is own certificate to dialog with the server. The the browser can detect that someone is listening on the channel, since the certificate was fuzzed. We can by-pass the protection, by trusting the certificate comming from the Burp tool, it means that Burp will use is own certificate to sign the answer, and as the certificate is trusted, the browser will accept the answer.<br/>
+To trust the certificate we can configure it as described in the portswigger [documentation:](https://portswigger.net/burp/documentation/desktop/mobile/config-ios-device).<br>
+To sum up:
+* Start Burp proxy on a Computer.
+* Trust the Burp certificate on mobile phone.
+* Configure the proxy client on the mobile and make it point out on the Burp proxy.
 
 ## Request analysis
-After the proxy configured, and the burp proxy listening the request, I started a game with wordblitz to analyze how it works.
+After the proxy configured on the mobile, and the burp proxy running on the computer, we get all requests coming in and out from the mobile. So we can start a game with wordblitz to analyze what is behind the scene.
 We got the following result:
 <img width="1498" alt="image" src="https://user-images.githubusercontent.com/20342260/226113936-08f2d0a3-d10b-4484-a30b-11495490324c.png">
 What a bunch o requests! After sorting them, three are quite intersting:
@@ -34,10 +39,10 @@ What a bunch o requests! After sorting them, three are quite intersting:
 <img width="1011" alt="image" src="https://user-images.githubusercontent.com/20342260/226115150-7e2cc3bb-75e1-4ad6-aa45-a6b72568817d.png">
 
 
-## Exploiting the requests
+## Writting a Robot to automate the game play.
 Before exploiting the program, we can get the signature parameter provided as url parameter for each request.<br/>
 <img width="907" alt="image" src="https://user-images.githubusercontent.com/20342260/226115450-df9ce31f-297b-4b4f-ab2a-f5654fd545de.png"><br/>
-This parameters authenticates our user on the server. If we reuse this parameter, we can run the requests on any device, it means we do not need burp anymore!</br>
+This parameters authenticates our user on the server. If we reuse this parameter, we can run the requests on any device, it means we can run a robot from a laptop</br>
 As I have already the grid, and all words I wrote a first script to display the grid for the current round and return all words.
 Then I improved the program to make it finding the best words !<br/>
 <img width="562" alt="image" src="https://user-images.githubusercontent.com/20342260/226115836-00a5751d-ddfb-4762-9fab-f7f80e988b55.png">
@@ -53,7 +58,7 @@ And finally, I complete the program to make it playing automatically, up to you 
 
 
 ## Conclusion
-Cheating is bad... :)  Ironically, testing the app, I loose against another cheater, but now you know how it works.
+Cheating is bad... :)  Beyond the hack of the game, now I am able to see all data and personal data leaking out of my mobile - "If it is free you are the product !". Moreover, reusing this technique, I was able to hack another app, but it's another story.
 
 
 ## Make the program working
