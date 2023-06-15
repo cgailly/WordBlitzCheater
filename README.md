@@ -54,7 +54,7 @@ We created a node for each letters and link each letter to the ones next to it. 
 </br><img width="562" alt="image" src="./img/graph2.jpg"></br>
 
 After, we can display the grid, find path of the word in the grid and computes the score, and eventually sort by the best words.
-<img width="562" alt="image" src="https://user-images.githubusercontent.com/20342260/226115836-00a5751d-ddfb-4762-9fab-f7f80e988b55.png">
+<br><img width="562" alt="image" src="https://user-images.githubusercontent.com/20342260/226115836-00a5751d-ddfb-4762-9fab-f7f80e988b55.png">
 
 
 Finally, we can complete the program to make it playing automatically as we already have the path in the grid, just send the request with it. To be more discret I added an option to decide how many words will be returned!
