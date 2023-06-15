@@ -71,7 +71,7 @@ Finally, we can complete the program to make it playing automatically as we alre
 Cheating is bad... :)  Beyond the hack of the game, now I am able to see all data and personal data leaking out of my mobile - "If it is free you are the product !".
 
 
-## Make the program working
+## How to run the program
 Install:
 
     $ pip3.10 install -r requirements.txt
