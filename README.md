@@ -39,14 +39,14 @@ What a bunch o requests! After sorting them, three are quite intersting:
 <img width="1011" alt="image" src="https://user-images.githubusercontent.com/20342260/226115150-7e2cc3bb-75e1-4ad6-aa45-a6b72568817d.png">
 
 
-## Writing a Robot to automate the game play.
+## Writing a Robot to automate the game.
 Before exploiting the program, we can get the signature parameter provided as url parameter for each request.<br/>
 <img width="907" alt="image" src="https://user-images.githubusercontent.com/20342260/226115450-df9ce31f-297b-4b4f-ab2a-f5654fd545de.png"><br/>
 This parameters authenticates our user on the server. If we reuse this parameter, we can run the requests on any device, it means we can run a robot from a laptop</br>
 As I have already the grid, and all words, as first step I wrote a first script to display the grid for the current round and return all words.
 
 
-But we can do better. We want to find words with the best score, and automate a game play.<br/>
+But we can do better. We want to find words with the best score, and automate a game.<br/>
 We know we have to find the path of the words in the grid.<br>
 To solve this I represented the grid as a [graph](https://en.wikipedia.org/wiki/Graph_theory)<br>
 Supposing we have the following grid and we search for the *Hello* word.
